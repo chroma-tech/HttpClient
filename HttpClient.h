@@ -7,7 +7,12 @@
 
 #include <Arduino.h>
 #include <IPAddress.h>
+#if defined(ARDUINO_TEENSY41)
+#include <NativeEthernet.h>
+#else
 #include "Client.h"
+#endif
+
 
 static const int HTTP_SUCCESS =0;
 // The end of the headers has been reached.  This consumes the '\n'
